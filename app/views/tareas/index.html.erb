@@ -23,6 +23,11 @@
                     <div class="card-body">
                       <%= link_to tarea.descripcion, edit_tarea_path(tarea), class: 'alert-link' %>
                     </div>
+                    <%if tarea.FechaFin%>
+                      <div class="badge badge-success">FINALIZA: <%=tarea.FechaFin.strftime("%d/%m/%Y")%></div>
+                    <%else%>
+                      <div class="badge badge-success">Sin fecha definida</div>
+                    <%end%>
                   </div><br>
                 <% end %>
               <%end%>
