@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tareas</h1>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th>Estados/Materia</th>
+      <% @materias.each do |materia|  %>
+        <th><%=materia.nombre%></th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <%@estados.each do |estado| %>
+        <tr>
+          <td class="table-primary font-weight-bold"><%=estado.nombre%></td>
+          <% @materias.each do |materia|  %>
+            <td>
+              <% @tareas.each do |tarea| %>
+                <% if tarea.estado==estado && tarea.materium==materia %>
+                  <div class="card alert-warning" style="width: 18rem;">
+                    <div class="card-body">
+                      <%= link_to tarea.descripcion, edit_tarea_path(tarea), class: 'alert-link' %>
+                    </div>
+                  </div><br>
+                <% end %>
+              <%end%>
+            </td>
+          <% end %>
+        </tr>
+    <%end%>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nueva tarea', new_tarea_path %>
