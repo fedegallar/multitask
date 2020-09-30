@@ -78,6 +78,6 @@ class TareasController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def tarea_params
-      params.require(:tarea).permit(:descripcion, :materium_id, :estado_id)
+      params.require(:tarea).permit(:descripcion, :materium_id, :estado_id, :FechaFin)
     end
 end
