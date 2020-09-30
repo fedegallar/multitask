@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_29_005951) do
+ActiveRecord::Schema.define(version: 2020_09_30_023229) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.text "comentario"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2020_09_29_005951) do
     t.bigint "estado_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.date "FechaFin"
     t.index ["estado_id"], name: "index_tareas_on_estado_id"
     t.index ["materium_id"], name: "index_tareas_on_materium_id"
   end
