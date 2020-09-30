@@ -1,14 +1,16 @@
 <h1>Detalles de la tarea</h1>
-<%= link_to 'Volver', tareas_path %>
-<%= render 'form', tarea: @tarea %>
+<div class="p-2">
+    <%= link_to 'Volver', tareas_path %>
+    <%= render 'form', tarea: @tarea %>
 
-<h3>Comentarios</h3>
-<%@comentarios.each do |comentario|%>
-<div class="card">
-    <div class="card-body">
-        <h5 class="card-title"><%=comentario.created_at.localtime.strftime("%d.%m.%Y a las %I:%M%p")%></h5>
-        <p class="card-text"><%=comentario.comentario%></p>
+    <h3>Comentarios</h3>
+    <%@comentarios.each do |comentario|%>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title"><%=comentario.created_at.localtime.strftime("%d.%m.%Y a las %I:%M%p")%></h5>
+            <p class="card-text"><%=comentario.comentario%></p>
+        </div>
     </div>
+    <% end %>
+    <%= render partial: 'comments/form' %>
 </div>
-<% end %>
-<%= render partial: 'comments/form' %>

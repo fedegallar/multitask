@@ -1,13 +1,9 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Tareas</h1>
-
-<table class="table">
+<table class="table table-fixed">
   <thead class="thead-dark">
     <tr>
-      <th>Estados/Materia</th>
+      <th class="text-center">Estados/Materia(<%= link_to 'Nueva tarea', new_tarea_path %>)</th>
       <% @materias.each do |materia|  %>
-        <th><%=materia.nombre%></th>
+        <th class="text-center"><%=materia.nombre%></th>
       <% end %>
     </tr>
   </thead>
@@ -37,7 +33,3 @@
     <%end%>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'Nueva tarea', new_tarea_path %>
