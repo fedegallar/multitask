@@ -51,7 +51,7 @@ class TareasController < ApplicationController
   def update
     respond_to do |format|
       if @tarea.update(tarea_params)
-        format.html { redirect_to @tarea, notice: 'Tarea was successfully updated.' }
+        format.html { redirect_to edit_tarea_path(@tarea.id), notice: 'Tarea was successfully updated.' }
         format.json { render :show, status: :ok, location: @tarea }
       else
         format.html { render :edit }
