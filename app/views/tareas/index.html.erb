@@ -1,36 +1,4 @@
-<nav class="navbar-wrapper navbar-expand-xl navbar-dark bg-dark" style="{width: 100% !important;}">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuMaterias" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Materias
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuMaterias">
-          <%= link_to 'Nueva materia', new_materium_path, class: 'dropdown-item'%>
-        </div>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuEstados" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Estados
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuEstados">
-          <%= link_to 'Nuevo estado', new_estado_path, class: 'dropdown-item'%>
-        </div>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuTareas" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Tareas
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuTareas">
-          <%= link_to 'Nueva tarea', new_tarea_path, class: 'dropdown-item'%>
-        </div>
-      </li>
-    </ul>
-  </div>
-</nav>
+<%= render 'navbar'%>
 <table class="table m-0 table-bordered">
   <thead class="thead-dark">
     <tr>

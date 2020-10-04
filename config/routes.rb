@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :comments, only: [:new, :create]
   resources :tareas
   resources :materia
