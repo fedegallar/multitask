@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_01_174332) do
+ActiveRecord::Schema.define(version: 2020_10_04_163015) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.text "comentario"
@@ -32,6 +32,15 @@ ActiveRecord::Schema.define(version: 2020_10_01_174332) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "projects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "nombre"
+    t.text "descripcion"
+    t.date "fechainicio"
+    t.date "fechafin"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "tareas", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "descripcion"
     t.bigint "materium_id", null: false
@@ -39,8 +48,10 @@ ActiveRecord::Schema.define(version: 2020_10_01_174332) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.date "FechaFin"
+    t.bigint "project_id", default: 1, null: false
     t.index ["estado_id"], name: "index_tareas_on_estado_id"
     t.index ["materium_id"], name: "index_tareas_on_materium_id"
+    t.index ["project_id"], name: "index_tareas_on_project_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -58,4 +69,5 @@ ActiveRecord::Schema.define(version: 2020_10_01_174332) do
   add_foreign_key "comments", "tareas"
   add_foreign_key "tareas", "estados"
   add_foreign_key "tareas", "materia"
+  add_foreign_key "tareas", "projects"
 end
