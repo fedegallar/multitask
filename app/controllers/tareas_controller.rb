@@ -66,7 +66,7 @@ class TareasController < ApplicationController
   def destroy
     @tarea.destroy
     respond_to do |format|
-      format.html { redirect_to tareas_url, notice: 'Tarea was successfully destroyed.' }
+      format.html { redirect_to tareas_url }
       format.json { head :no_content }
     end
   end
