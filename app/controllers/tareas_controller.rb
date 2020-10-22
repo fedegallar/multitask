@@ -38,7 +38,7 @@ class TareasController < ApplicationController
 
     respond_to do |format|
       if @tarea.save
-        format.html { redirect_to @tarea, notice: 'Tarea was successfully created.' }
+        format.html { redirect_to root_path }
         format.json { render :show, status: :created, location: @tarea }
       else
         format.html { render :new }
@@ -66,7 +66,7 @@ class TareasController < ApplicationController
   def destroy
     @tarea.destroy
     respond_to do |format|
-      format.html { redirect_to tareas_url }
+      format.html { redirect_to root_path }
       format.json { head :no_content }
     end
   end
