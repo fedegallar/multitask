@@ -28,7 +28,7 @@ class TareasController < ApplicationController
     @estados = Estado.all
     @comment = Comment.new
     @tarea = Tarea.find(params[:id])
-    @comentarios = @tarea.comments.all
+    @comentarios = @tarea.comments.page(params[:page]).per(10)
   end
 
   # POST /tareas
