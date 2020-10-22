@@ -19,12 +19,12 @@
                 <% if tarea.estado==estado && tarea.materium==materia %>
                   <div class="card alert-warning" style="width: 18rem;">
                     <div class="card-body">
-                      <%= link_to tarea.descripcion, edit_tarea_path(tarea), class: 'alert-link' %>
+                      <%= link_to tarea.descripcion, edit_tarea_path(tarea), class: 'alert-link', style: "font-family: 'Coming Soon', cursive; font-size: 18px" %>
                     </div>
                     <%if tarea.FechaFin%>
-                      <div class="badge badge-success">FINALIZA: <%=tarea.FechaFin.strftime("%d/%m/%Y")%></div>
+                      <div class="badge badge-success" style="font-family: 'Coming Soon', cursive; font-size: 18px">FINALIZA: <%=tarea.FechaFin.strftime("%d/%m/%Y")%></div>
                     <%else%>
-                      <div class="badge badge-success">Sin fecha definida</div>
+                      <div class="badge badge-success" style="font-family: 'Coming Soon', cursive; font-size: 18px">Sin fecha definida</div>
                     <%end%>
                   </div><br>
                 <% end %>
