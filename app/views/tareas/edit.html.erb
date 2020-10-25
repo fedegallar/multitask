@@ -1,9 +1,10 @@
+<%= stylesheet_link_tag 'comments' %>
 <h1>Detalles de la tarea</h1>
 <%= link_to 'Volver', tareas_path, class: 'btn btn-primary' %>
 <div class="w-75 m-3">
     <%= render 'form', tarea: @tarea %>
-
     <h3>Comentarios</h3>
+  <div class="overflow-auto">
     <%@comentarios.each do |comentario|%>
     <div class="card m-2">
         <div class="card-body">
@@ -12,6 +13,7 @@
         </div>
     </div>
     <% end %>
+  </div>
   <%= paginate @comentarios, window: 2 %>
     <%= render partial: 'comments/form' %>
 </div>
