@@ -29,13 +29,26 @@
           </div>
         </li>
         <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuProyecto" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           Proyecto
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuProyecto">
+            <%= link_to 'Ver detalles', edit_project_path(@proyecto.id), class: 'dropdown-item'%>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuUsuario" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Usuario
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuUsuario">
-            <%= link_to 'Ver cuenta', edit_user_password_path, class: 'dropdown-item'%>
+            <%= link_to 'Ver cuenta', edit_user_registration_path, class: 'dropdown-item'%>
             <%= link_to 'Cerrar sesión', destroy_user_session_path, :method => :delete , class: 'dropdown-item'%>
           </div>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <h5 class="navbar-brand"><%= @proyecto.nombre %></h5>
         </li>
       </ul>
     </div>

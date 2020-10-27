@@ -10,6 +10,7 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
+    session[:current_project] = Project.find(params[:id]).id
   end
 
   # GET /projects/new

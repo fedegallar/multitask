@@ -5,7 +5,8 @@ class TareasController < ApplicationController
   # GET /tareas
   # GET /tareas.json
   def index
-    @tareas = Tarea.all
+    @proyecto = Project.find(session[:current_project])
+    @tareas = Tarea.where(project_id: session[:current_project])
     @materias = Materium.all
     @estados = Estado.all
   end
@@ -18,6 +19,7 @@ class TareasController < ApplicationController
   # GET /tareas/new
   def new
     @tarea = Tarea.new
+    @tarea.project_id = session[:current_project]
     @materias = Materium.all
     @estados = Estado.all
   end
@@ -79,6 +81,6 @@ class TareasController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def tarea_params
-      params.require(:tarea).permit(:descripcion, :materium_id, :estado_id, :FechaFin)
+      params.require(:tarea).permit(:descripcion, :materium_id, :estado_id, :FechaFin, :project_id)
     end
 end
