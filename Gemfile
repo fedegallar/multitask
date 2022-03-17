@@ -1,12 +1,13 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.1'
+ruby '3.0.1'
 
 gem 'rubocop', require: true
 gem 'kaminari'
 gem 'devise'
-gem 'mini_racer'
+gem 'mini_racer', '~> 0.6.2'
+gem 'jsbundling-rails'
 gem 'jquery-rails'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'bootstrap', '~> 4.0.0'
@@ -18,8 +19,6 @@ gem 'mysql2', '>= 0.4.4'
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
-# Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-gem 'webpacker', '~> 4.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
